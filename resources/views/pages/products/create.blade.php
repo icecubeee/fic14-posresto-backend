@@ -91,7 +91,7 @@
 
                             <div class="form-group">
                                 <label class="form-label">Category</label>
-                                    <select class="form-control selectric @error('category_id') is-invalid @enderror" 
+                                    <select class="form-control selectric @error('category_id') is-invalid @enderror"
                                     name="category_id">
                                         <option value="">Choose Category</option>
                                         @foreach ($categories as $category)
@@ -133,11 +133,11 @@
                                 <label class="form-label">Is Favourite</label>
                                 <div class="selectgroup selectgroup-pills">
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="is_favourite" value="1" class="selectgroup-input" checked="">
+                                        <input type="radio" name="is_favorite" value="1" class="selectgroup-input" checked="">
                                         <span class="selectgroup-button">Yes</span>
                                     </label>
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="is_favourite" value="0" class="selectgroup-input">
+                                        <input type="radio" name="is_favorite" value="0" class="selectgroup-input">
                                         <span class="selectgroup-button">No</span>
                                     </label>
                                 </div>
