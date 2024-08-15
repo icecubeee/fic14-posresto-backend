@@ -11,9 +11,9 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Users</h1>
+                <h1>Category</h1>
                 <div class="section-header-button">
-                    <a href="{{ route('category.create') }}" class="btn btn-primary">Add New</a>
+                    <a href="{{ route('categories.create') }}" class="btn btn-primary">Add New</a>
                 </div>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
@@ -22,26 +22,31 @@
                 </div>
             </div>
             <div class="section-body">
-                {{--<div class="row">
-                    <div class="col-12">
-                        @include('layouts.alert')
+                <div class="section-body">
+                    <div class="row">
+                        <div class="col-12">
+                            @include('layouts.alert')
+                        </div>
                     </div>
-                </div>--}}
-                
+
 
 
                 <div class="row mt-4">
                     <div class="col-12">
                         <div class="card">
-                            
-                            
+                            <div class="card-header">
+                                <div>all categories</div>
+                                <div class="card-body">
+
                                 <div class="float-right">
-                                    <form method="GET" action="{{ route('user.index') }}">
+                                    <form method="GET" action="{{ route('categories.index') }}">
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search" name="name">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                             </div>
+                                        </div>
+                                        </div>
                                         </div>
                                     </form>
                                 </div>
@@ -62,17 +67,17 @@
 
                                                 <td>{{ $category->name }}
                                                 </td>
-                                                
+
                                                 <td>{{ $category->created_at }}</td>
                                                 <td>
                                                     <div class="d-flex justify-content-center">
-                                                        <a href='{{ route('category.edit', $category->id) }}'
+                                                        <a href='{{ route('categories.edit', $category->id) }}'
                                                             class="btn btn-sm btn-info btn-icon">
                                                             <i class="fas fa-edit"></i>
                                                             Edit
                                                         </a>
 
-                                                        <form action="{{ route('category.destroy', $category->id) }}" method="POST"
+                                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST"
                                                             class="ml-2">
                                                             <input type="hidden" name="_method" value="DELETE" />
                                                             <input type="hidden" name="_token"
